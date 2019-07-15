@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.greenrobot.greendao'
-apply plugin: 'io.fabric'
+//apply plugin: 'io.fabric'
 
 static def releaseTime() {
     return new Date().format("yy.MMddHH", TimeZone.getTimeZone("GMT+8"))
@@ -51,6 +51,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        /*
+        dexOptions {
+            // release & debug is in project animators
+            matchingFallbacks = ['release', 'debug']
+        }
+        */
         android.applicationVariants.all { variant ->
             variant.outputs.all {
                 outputFileName = "${name}_${defaultConfig.versionName}.apk"
@@ -89,7 +95,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     //google
-    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'com.google.android.material:material:1.1.0-alpha08'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.google.android:flexbox:1.1.0'
 
@@ -133,7 +139,7 @@ dependencies {
     implementation 'net.ricecode:string-similarity:1.0.0'
 
     //MarkDown
-    implementation 'ru.noties.markwon:core:3.0.2'
+    implementation 'ru.noties.markwon:core:3.1.0'
 
     //epub
     implementation('nl.siegmann.epublib:epublib-core:3.1') {
@@ -149,7 +155,8 @@ greendao {
     targetGenDir 'src/main/java'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 repositories {
+//    jcenter()
     mavenCentral()
 }
