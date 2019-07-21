@@ -774,6 +774,8 @@ public class ReadBookActivity extends MBaseActivity<ReadBookContract.Presenter> 
                             tvChapterName.setText("");
                             tvUrl.setText("");
                         }
+                        tvChapterName.setVisibility(View.GONE);
+                        tvUrl.setVisibility(View.GONE);
 
                         if (mPresenter.getBookShelf().getChapterListSize() == 1) {
                             readBottomMenu.setTvPre(false);
