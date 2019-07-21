@@ -63,6 +63,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import kotlin.Unit;
@@ -151,10 +152,10 @@ public class MainActivity extends BaseTabActivity<MainContract.Presenter> implem
     public void initImmersionBar() {
         super.initImmersionBar();
     }
-
     @Override
     protected void initData() {
         viewIsList = preferences.getBoolean("bookshelfIsList", true);
+
         mTitles = new String[]{getString(R.string.bookshelf), getString(R.string.find)};
     }
 

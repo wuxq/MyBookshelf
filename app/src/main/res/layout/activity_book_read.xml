@@ -91,7 +91,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/btn_bg_press" />
-
                     <TextView
                         android:id="@+id/tv_chapter_name"
                         android:layout_width="match_parent"
@@ -123,6 +122,7 @@
                         android:id="@+id/atv_line"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:visibility="gone"
                         android:background="@color/btn_bg_press" />
 
                 </com.google.android.material.appbar.AppBarLayout>
